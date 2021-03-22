@@ -29,6 +29,18 @@ a {
 
 
 /*
+    Mobile
+*/
+
+@media (max-width: 1024px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+
+
+/*
     Layout
 */
 
@@ -40,7 +52,7 @@ header {
 }
 section {
     height: calc(100% - 64px);
-    padding: 40px;
+    padding: 2em;
     display: flex;
     flex-flow: column nowrap;
 }
@@ -76,7 +88,6 @@ footer {
 */
 
 .heading {
-    padding: 0 2em;
     text-align: center;
 }
 .heading h1 {
@@ -137,7 +148,7 @@ footer {
     Video
 */
 
-#video {
+.video {
     display: none;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -183,6 +194,10 @@ footer {
 .zoom p {
     text-align: center;
     margin: 1.5em 0;
+    font-weight: 700;
+}
+@media (max-width: 728px) {
+    .zoom { display: none }
 }
 
 
