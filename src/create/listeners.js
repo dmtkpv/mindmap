@@ -78,8 +78,7 @@ export default function (map) {
         const height = +$video.getAttribute('data-video-height');
         if (active.video) map.emit('deactivate:video');
         if (active.note) map.emit('deactivate:note');
-        const $planet = $video.parentNode;
-
+        // const $planet = $video.parentNode;
         // if (!active.planet || active.planet.$planet !== $planet) clickPlanet($planet);
         map.emit('activate:video', { $node, video: { src, width, height } });
     }
@@ -115,6 +114,40 @@ export default function (map) {
         map.emit('activate:note', getNote($moon));
     }
 
+    function scalePlanet (planet) {
+        const r = planet.$group.querySelector('circle').getAttribute('r');
+        const s = Config.r[0] / r;
+        const $svg = map.$node.querySelector('svg');
+        const {x, y, width, height} = $svg.viewBox.baseVal;
+        planet.scaling = {}
+        planet.scaling.data = {
+            x: planet.tx,
+            y: planet.ty,
+            s: 1
+        }
+        planet.scaling.animation = gsap.to(planet.scaling.data, {
+            x: width / 2,
+            y: height / 2,
+            s,
+            onUpdate () {
+                planet.$group.setAttribute('transform', `translate(${planet.scaling.data.x - r * planet.scaling.data.s} ${planet.scaling.data.y - r * planet.scaling.data.s}) scale(${planet.scaling.data.s})`)
+            }
+        })
+    }
+
+    function unScalePlanet (planet) {
+        planet.scaling.animation.kill();
+        const r = +planet.$group.querySelector('circle').getAttribute('r');
+        planet.scaling.animation = gsap.to(planet.scaling.data, {
+            x: planet.tx + r,
+            y: planet.ty + r,
+            s: 1,
+            onUpdate () {
+                planet.$group.setAttribute('transform', `translate(${planet.scaling.data.x - r * planet.scaling.data.s} ${planet.scaling.data.y - r * planet.scaling.data.s}) scale(${planet.scaling.data.s})`)
+            }
+        })
+    }
+
 
 
     // ----------------------
@@ -139,6 +172,7 @@ export default function (map) {
     })
 
 
+
     // ----------------------
     // Map listener
     // ----------------------
@@ -154,7 +188,6 @@ export default function (map) {
         $overlay.style.display = shown ? 'block' : 'none'
     })
 
-
     map.on('activate:note', note => {
         active.note = note;
     })
@@ -162,48 +195,6 @@ export default function (map) {
     map.on('deactivate:note', () => {
         active.note = null;
     })
-
-
-    function scalePlanet (planet) {
-        const r = planet.$group.querySelector('circle').getAttribute('r');
-        const s = Config.r[0] / r;
-        const $svg = map.$node.querySelector('svg');
-        const {x, y, width, height} = $svg.viewBox.baseVal;
-
-        planet.scaling = {}
-
-        planet.scaling.data = {
-            x: planet.tx,
-            y: planet.ty,
-            s: 1
-        }
-        planet.scaling.animation = gsap.to(planet.scaling.data, {
-            x: width / 2,
-            y: height / 2,
-            s,
-            onUpdate () {
-                planet.$group.setAttribute('transform', `translate(${planet.scaling.data.x - r * planet.scaling.data.s} ${planet.scaling.data.y - r * planet.scaling.data.s}) scale(${planet.scaling.data.s})`)
-            }
-        })
-
-
-    }
-
-    function unScalePlanet (planet) {
-        planet.scaling.animation.kill();
-        const r = +planet.$group.querySelector('circle').getAttribute('r');
-
-        planet.scaling.animation = gsap.to(planet.scaling.data, {
-            x: planet.tx + r,
-            y: planet.ty + r,
-            s: 1,
-            onUpdate () {
-                planet.$group.setAttribute('transform', `translate(${planet.scaling.data.x - r * planet.scaling.data.s} ${planet.scaling.data.y - r * planet.scaling.data.s}) scale(${planet.scaling.data.s})`)
-            }
-        })
-    }
-
-
 
     map.on('activate:planet', planet => {
         $svg.appendChild(planet.$group);
@@ -221,13 +212,15 @@ export default function (map) {
 
 
 
+    // ----------------------
+    // Video icon animatiob
+    // ----------------------
 
     const $videos = map.$node.querySelectorAll('.mm-video');
 
     Array.from($videos).forEach($video => {
 
         const w = 47;
-        const s = 2;
         const x = +$video.getAttribute('x')
         const y = +$video.getAttribute('y')
 
