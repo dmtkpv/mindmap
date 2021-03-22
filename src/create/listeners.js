@@ -151,7 +151,7 @@ export default function (map) {
     // Click listener
     // ----------------------
 
-    map.$node.addEventListener('click', event => {
+    $svg.addEventListener('click', event => {
         const $video = find('mm-video', event.target);
         if ($video) return clickVideo($video);
         const $planet = find('mm-planet', event.target);
@@ -163,7 +163,7 @@ export default function (map) {
         if (active.planet) map.emit('deactivate:planet');
     })
 
-    map.$node.addEventListener('click', event => {
+    $svg.addEventListener('click', event => {
         const shown = Object.keys(active).some(key => active[key]);
         $overlay.style.display = shown ? 'block' : 'none'
     })
@@ -176,35 +176,35 @@ export default function (map) {
 
     map.on('activate:video', video => {
         active.video = video;
-    })
+    }, true)
 
     map.on('deactivate:video', () => {
         active.video = null;
         const shown = Object.keys(active).some(key => active[key]);
         $overlay.style.display = shown ? 'block' : 'none'
-    })
+    }, true)
 
     map.on('activate:note', note => {
         active.note = note;
-    })
+    }, true)
 
     map.on('deactivate:note', () => {
         active.note = null;
-    })
+    }, true)
 
     map.on('activate:planet', planet => {
         $svg.appendChild(planet.$group);
         planet.moonAnimations.forEach(animation => animation.play());
         scalePlanet(planet)
         active.planet = planet;
-    })
+    }, true)
 
     map.on('deactivate:planet', () => {
         active.planet.moonAnimations.forEach(animation => animation.reverse());
         unScalePlanet(active.planet)
         $svg.insertBefore(active.planet.$group, active.planet.$next);
         active.planet = null;
-    })
+    }, true)
 
 
 

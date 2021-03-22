@@ -42,6 +42,11 @@ export default class MindMap {
     }
     
     destroy () {
+        Object.keys(this.listeners).forEach(key => {
+            this.listeners[key].forEach(data => {
+                if (data.removable) this.off(key, data.handler)
+            })
+        })
         this.animations.forEach(animation => animation.kill());
     }
 
@@ -54,20 +59,20 @@ export default class MindMap {
     // Events
     // ----------------------
 
-    on (event, handler) {
+    on (event, handler, removable) {
         this.listeners[event] = this.listeners[event] || [];
-        this.listeners[event].push(handler);
+        this.listeners[event].push({ handler, removable });
     }
 
     off (event, handler) {
         if (!this.listeners[event]) return;
-        const index = this.listeners[event].indexOf(handler);
+        const index = this.listeners[event].findIndex(data => data.handler === handler);
         if (index > -1) this.listeners[event].splice(index, 1);
     }
 
     emit (event, param) {
         if (!this.listeners[event]) return;
-        this.listeners[event].forEach(handler => handler(param, this));
+        this.listeners[event].forEach(data => data.handler(param, this));
     }
 
 
