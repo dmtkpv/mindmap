@@ -1,7 +1,6 @@
-.mm svg {
-    width: 100%;
-    height: 100%;
-}
+/*
+    Borders
+*/
 
 .mm-border {
     fill: none;
@@ -10,23 +9,13 @@
 .mm-border--bg {
     stroke: #FAFAFA;
 }
-.mm-sun circle,
-.mm-planet circle {
-    fill: #EEE;
-    /*opacity: 0;*/
-}
-.mm-long {
-    /*opacity: 0;*/
-}
-.mm-short {
-    /*opacity: 0;*/
-}
-.mm-internal {
-    opacity: 0;
-}
-.mm-mb {
-    /*opacity: 0;*/
-}
+
+
+
+/*
+    Lines
+*/
+
 .mm-line {
     stroke-width: 6;
 }
@@ -34,13 +23,25 @@
     stroke: #FFBC1D;
 }
 
+
+
+/*
+    Circles
+*/
+
+.mm-sun circle,
+.mm-planet circle {
+    fill: #EEE;
+}
+
+
+
+/*
+    Texts
+*/
+
 .mm text {
     fill: #FFFFFF;
-    /*alignment-baseline: middle;*/
-}
-.mm tspan {
-    text-anchor: middle;
-    alignment-baseline: middle;
 }
 .mm-planet text {
     font-size: 20px;
@@ -48,9 +49,19 @@
 .mm-moon text {
     font-size: 14px;
 }
+.mm tspan {
+    text-anchor: middle;
+    alignment-baseline: middle;
+}
 .mm-note {
     display: none;
 }
+
+
+
+/*
+    Overlay
+*/
 
 .mm-overlay {
     display: none;
