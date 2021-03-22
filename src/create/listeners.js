@@ -39,15 +39,12 @@ export default function (map) {
         const m = +$group.getAttribute('data-moon-margin');
         const r = +$circle.getAttribute('r') + (m || Config.moon.margin) + Config.moon.r;
 
-
         const moonAnimations = Array.from($moons).map(($moon, i) => {
             const a = Math.PI * 2 / $moons.length * i;
             const x = r * Math.cos(a);
             const y = r * Math.sin(a);
             return gsap.to($moon, { x, y, paused: true, duration: .3 })
         })
-
-        // translate(1867.784543325527 1144)
 
         const transform = $group.getAttribute('transform').split(' ');
         const tx = +transform[0].split('(')[1];
@@ -184,7 +181,6 @@ export default function (map) {
     map.on('deactivate:video', () => {
         active.video = null;
         const shown = Object.keys(active).some(key => active[key]);
-        console.log(shown)
         $overlay.style.display = shown ? 'block' : 'none'
     })
 

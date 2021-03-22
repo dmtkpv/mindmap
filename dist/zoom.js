@@ -44,8 +44,6 @@
         const x0 = (x - scene.x) / scene.scale;
         const y0 = (y - scene.y) / scene.scale;
 
-        console.log(x, (x - scene.x) / scene.scale)
-
         zoom = Math.max(zoom, 0);
         zoom = Math.min(zoom, 1);
 

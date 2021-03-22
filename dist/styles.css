@@ -51,6 +51,7 @@ header {
     line-height: 64px;
 }
 section {
+    position: relative;
     height: calc(100% - 64px);
     padding: 2em;
     display: flex;
@@ -207,16 +208,22 @@ footer {
 */
 
 .switch {
-    position: absolute;
-    right: 2em;
-    height: 3em;
+    display: inline-block;
     border-radius: 1.5em;
-    line-height: 3em;
+    line-height: 2.4em;
     padding: 0 1em;
     background: #FFBC1D;
     color: #0A69D2;
     font-weight: 900;
 }
+@media (min-width: 729px) {
+    .switch {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+    }
+}
+
 
 
 
