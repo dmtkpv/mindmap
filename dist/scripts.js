@@ -73,6 +73,7 @@
             url: video.src,
             width: video.width,
             height: video.height,
+            muted: window.innerWidth <= 728
         });
         player.play();
         player.on('timeupdate', function(data) {
