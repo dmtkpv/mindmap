@@ -57,6 +57,7 @@
     // ----------------------
 
     const $video = document.getElementById('video');
+    const $intro = document.getElementById('intro');
     let player = null;
 
     function hideVideo () {
@@ -84,6 +85,17 @@
     map.on('deactivate:video', () => {
         hideVideo()
     });
+
+    $intro.addEventListener('click', () => {
+        map.emit('activate:video', {
+            $node: $map,
+            video: {
+                src: 'https://player.vimeo.com/video/527579580',
+                width: 640,
+                height: 564
+            }
+        })
+    })
 
 
 })();
