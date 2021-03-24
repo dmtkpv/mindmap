@@ -436,9 +436,14 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p9.png"/>
             <text class="mm-title" y="75">
-                <tspan x="75" dy="-10">Data</tspan>
+                <tspan x="75" dy="-20">Data</tspan>
                 <tspan x="75" dy="20">Feedback</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 10 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527582705"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">LightSail believes that meaningful data feedback is one of the most valuable tools parents and children can have to affect real literacy progress.</text>
         </g>
 
@@ -523,8 +528,13 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p8.png"/>
             <text class="mm-title" x="75" y="75">
-                <tspan dy="0">Multimedia</tspan>
+                <tspan dy="-5">Multimedia</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 5 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527582705"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">LightSail is a complete language arts platform for the 21st Century, incorporating a vast array of multimedia resources. Explore the world's landmarks with full 360 [degree symbol] images. Build a digital, interactively timeline of the history of Rome. Incorporate educational videos and TED Talks into unit studies and so much more.</text>
         </g>
 
@@ -585,8 +595,13 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p7.png"/>
             <text class="mm-title" x="75" y="75">
-                <tspan dy="0">Assessments</tspan>
+                <tspan dy="-5">Assessments</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 5 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527979173"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">LightSail uses multiple assessment techniques to precisely measure a child's reading level and then uses that information to tailor their educational experience precisely for them. A child's reading library, writing prompts, spelling words, and more will be leveled for each individual child, and LightSail will grow with them - adapting as they learn and progress.</text>
         </g>
 
@@ -738,8 +753,13 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p5.png"/>
             <text class="mm-title" x="75" y="75">
-                <tspan dy="0">Gamification</tspan>
+                <tspan dy="-5">Gamification</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 5 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527916930"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">LightSail believes reading and writing should be fun! That is why gamification is built into every aspect of the platform with motivational badges, incentifying gifts, social sharing options, and more.</text>
         </g>
 
@@ -790,8 +810,13 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p12.png"/>
             <text class="mm-title" x="75" y="75">
-                <tspan dy="0">Grading</tspan>
+                <tspan dy="-5">Grading</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 5 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527905097"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">In addition to the multiple ways that LightSail automatically assesses a child’s progress, a parent can easily grade a child’s answers to short response questions using either standard grading or a simple rubric. And LightSail contains a powerful tool for objectively grading and tracking your child's fluency progress called a Running Record.</text>
         </g>
 
@@ -843,9 +868,14 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p11.png"/>
             <text class="mm-title" y="75">
-                <tspan x="75" dy="-10">Struggling</tspan>
+                <tspan x="75" dy="-20">Struggling</tspan>
                 <tspan x="75" dy="20">Reders</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 10 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527973425"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">LightSail's goal is to make the world a more literate place, so it brings many one-of-a-kind features and quality content especially designed to support struggling readers.</text>
         </g>
 
@@ -909,9 +939,14 @@
             <circle r="75" cx="75" cy="75"/>
             <image x="0" y="0" height="150" width="150" href="<%= dir %>/p10.png"/>
             <text class="mm-title" y="75">
-                <tspan x="75" dy="-10">Early</tspan>
+                <tspan x="75" dy="-20">Early</tspan>
                 <tspan x="75" dy="20">Learners</tspan>
             </text>
+            <image x="<%= 75 - 23.5 %>" y="<%= 75 + 10 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
+                   data-video-src="https://player.vimeo.com/video/527966414"
+                   data-video-width="640"
+                   data-video-height="564"
+            />
             <text class="mm-note">LightSail has captivating and educational content for every member of the family, from preschoolers to adults. Our features for early learners help little ones build a strong foundation of knowledge and skills, make connections, learn independently, and aquire research and navigation skills -- all while having fun!</text>
         </g>
 
