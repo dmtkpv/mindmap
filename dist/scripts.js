@@ -92,7 +92,7 @@
             video: {
                 src: 'https://player.vimeo.com/video/527579580',
                 width: 640,
-                height: 564
+                height: 360
             }
         })
     })

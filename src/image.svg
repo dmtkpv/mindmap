@@ -531,7 +531,7 @@
                 <tspan dy="-5">Multimedia</tspan>
             </text>
             <image x="<%= 75 - 23.5 %>" y="<%= 75 + 5 %>" height="47" width="47" href="<%= dir %>/video.png" class="mm-video"
-                   data-video-src="https://player.vimeo.com/video/527582705"
+                   data-video-src="https://player.vimeo.com/video/528299864"
                    data-video-width="640"
                    data-video-height="564"
             />
